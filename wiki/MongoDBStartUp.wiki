@@ -13,10 +13,13 @@ This page tells the step by step detailed process to start MongoDB at windows in
 #Go to the C:\ directory and issue the following command sequence:
 
 #make directories
-md data
-md data\db
+
+`md data`
+
+`md data\db`
 
 #To start MongoDB, execute from the Command Prompt:
 
-#Your MongoDB installed path
-C:\mongodb\bin\mongod.exe
+#Your MongoDB installed path e.g. C:\mongodb\bin\
+
+`mongod.exe`
