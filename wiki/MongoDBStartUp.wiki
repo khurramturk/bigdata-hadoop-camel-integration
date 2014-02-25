@@ -1,3 +1,4 @@
+#summary MongoDB installation on windows.
 #labels MongoDB,MongoDBWindows,MongoDB-configuration
 = HOW TO START MongoDB on Windows= 
 This page tells the detail process to start MongoDB at windows installed machine. 
