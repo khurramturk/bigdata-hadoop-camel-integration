@@ -1,4 +1,5 @@
-#summary cygwin installation on windows.
+#summary Cygwin installation on windows.
+#labels Cygwin-Windows,Cygwin-Installation,Cygwin-Linux-like-Windows
 
 = Introduction =
 The Add Host Targets Wizard is an application built into the Enterprise Manager Cloud Control console. It offers GUI-rich, interactive screens that enable you to install Oracle Management Agents (Management Agents) on unmanaged hosts and convert them to managed hosts, so that they can be monitored and managed in Enterprise Manager Cloud Control.
