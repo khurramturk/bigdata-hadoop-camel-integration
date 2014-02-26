@@ -26,7 +26,7 @@ To install cygwin following is procedure:
   * On the Choose Download Site(s) screen, select any site from the available list, then click Next.
   * On the select packages screen, ensure that you select the following packages, then click Next:
 
-     *  From the Archive category, select unzip and zip as follows:
-     *  From the Net category, select openssh and openssl as follows:
+  # From the Archive category, select unzip and zip.
+  # From the Net category, select openssh and openssl.
 
   * On the Installation Status and Create Icons screen, do not make any changes. Click Finish to complete the installation process.
