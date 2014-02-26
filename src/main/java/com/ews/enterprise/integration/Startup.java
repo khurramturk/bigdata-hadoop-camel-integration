@@ -20,7 +20,7 @@ public class Startup {
         try {
             props.load(new FileInputStream("environment.properties"));
             props.load(new FileInputStream("application.properties"));
-            String camelDcOnString = props.getProperty("org.airedale.dc.camel");
+            String camelDcOnString = props.getProperty("org.integration.dc.camel");
             
             
             Injector injector = Guice.createInjector(new MongoModule( props));
