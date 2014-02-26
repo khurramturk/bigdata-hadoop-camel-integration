@@ -17,10 +17,6 @@ public class GuiceServletConfig extends AbstractGuiceServletConfig {
 		String host = null;
         Integer port = null;
         String dbName = null;
-        String notificationsHost = null;
-        Integer notificationsPort = null;
-        String notificationsPath = null;
-        String notificationsTargetDBPath = null;
         Boolean autoConnectRetry = null;
         Integer connectionsPerHost = null;
         Integer connectTimeout = null;
@@ -42,10 +38,7 @@ public class GuiceServletConfig extends AbstractGuiceServletConfig {
             host = (String) initContext.lookup("java:comp/env/fileArchiveHost");
             port = (Integer) initContext.lookup("java:comp/env/fileArchivePort");
             dbName = (String) initContext.lookup("java:comp/env/fileArchiveDatabaseName");
-            notificationsHost = (String) initContext.lookup("java:comp/env/nHost");
-            notificationsPort = (Integer) initContext.lookup("java:comp/env/nPort");
-            notificationsPath = (String) initContext.lookup("java:comp/env/nPath");
-            notificationsTargetDBPath = (String) initContext.lookup("java:comp/env/nTargetDBPath");
+            
             autoConnectRetry = (Boolean) initContext.lookup("java:comp/env/autoConnectRetry");
             connectionsPerHost = (Integer) initContext.lookup("java:comp/env/connectionsPerHost");
             connectTimeout = (Integer) initContext.lookup("java:comp/env/connectTimeout");
@@ -61,14 +54,12 @@ public class GuiceServletConfig extends AbstractGuiceServletConfig {
             safe = (Boolean) initContext.lookup("java:comp/env/safe");
             socketKeepAlive = (Boolean) initContext.lookup("java:comp/env/socketKeepAlive");
             wtimeout = (Integer) initContext.lookup("java:comp/env/wtimeout");
+            
             System.out.println("FILE ARCHIVE HOST: " + host + ":" + port);
             props.setProperty("org.mongo.MongoDB.fileArchiveHost", host);
             props.setProperty("org.mongo.MongoDB.fileArchivePort", String.valueOf(port));
             props.setProperty("org.mongo.MongoDB.fileArchiveDatabaseName", dbName);
-            props.setProperty("notifications-host", notificationsHost);
-            props.setProperty("notifications-port", String.valueOf(notificationsPort));
-            props.setProperty("notifications-path", notificationsPath);
-            props.setProperty("notifications-targetDB-path", String.valueOf(notificationsTargetDBPath));
+            
             props.setProperty("org.mongo.MongoDB.autoConnectRetry", String.valueOf(autoConnectRetry));
             props.setProperty("org.mongo.MongoDB.connectionsPerHost", String.valueOf(connectionsPerHost));
             props.setProperty("org.mongo.MongoDB.connectTimeout", String.valueOf(connectTimeout));
@@ -83,9 +74,7 @@ public class GuiceServletConfig extends AbstractGuiceServletConfig {
             props.setProperty("org.mongo.MongoDB.maxAutoConnectRetryTime", String.valueOf(maxAutoConnectRetryTime));
             props.setProperty("org.mongo.MongoDB.safe", String.valueOf(safe));
             props.setProperty("org.mongo.MongoDB.socketKeepAlive", String.valueOf(socketKeepAlive));
-            props.setProperty("org.mongo.MongoDB.wtimeout", String.valueOf(wtimeout));
-            props.setProperty("cronString", "0/5 * * * * ?");
-            props.setProperty("numDays", "5");
+            props.setProperty("org.mongo.MongoDB.wtimeout", String.valueOf(wtimeout));            
 
             Injector injector = Guice.createInjector(new FileReaderModule(getCamelContext()), new MongoModule(props));
 
