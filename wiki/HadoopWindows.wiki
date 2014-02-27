@@ -9,25 +9,27 @@ Add your content here.
 = Details =
 
 Add your content here.  Format your content with:
-  * STEP 1) *installing cygwin*
-  * STEP 2)  *installing SSH Server.*
-  * STEP 3) create the folder
+  * *STEP 1)* Install cygwin from [https://code.google.com/p/bigdata-hadoop-camel-integration/wiki/CygwinWindows7Installation here]
+  * *STEP 2)* Install SSH Server from [https://code.google.com/p/bigdata-hadoop-camel-integration/wiki/OpenSSHServerWindowsInstallation here] .
+  * *STEP 3)* create the folder
 {{{
 C:\jdk1.6.0_38
 }}}
-Copy all the subfolder of your already installed Jre e.g.
+  Copy all the subfolder of your already installed Jre e.g.
 {{{
 copy data from c\program files\java\jre<version> to C:\jdk1.6.0_38
 }}}
+
+
   * STEP 4)  *Getting the hadoop ready.*
   * You can get the hadoop version 0.23.4 (Configured perfectly)
-[https://drive.google.com/file/d/0Bx33cC3yHVItbkVnOXFBamdrM1k/edit?usp=sharing Hadoop-Configured-Version]
+   [https://drive.google.com/file/d/0Bx33cC3yHVItbkVnOXFBamdrM1k/edit?usp=sharing Hadoop-Configured-Version]
 
-Extract the zip from above link
+  Extract the *Hadoop.zip*  from above link
 {{{
 Copy the hadoop/.bashrc ->  c/cygwin64/home/
 }}}
-After this step copy the hadoop folder e.g.
+  After this step copy the hadoop folder e.g.
 {{{
 Copy the hadoop/hadoop-0.23.4 ->  c/cygwin64/usr/local/
 }}}
@@ -73,11 +75,11 @@ http://localhost:19888/jobhistory (for Job History Server)
 }}}
 
   * Step 8) Now lets start with simple hadoop file system commands and then later run a sample program!
-a) Lets first create two directories
+  a) Lets first create two directories
 {{{
 hadoop fs -mkdir hdfs://localhost/input 
 }}}
-b) lets copy a log file that we are going to analyze . There are bunch of filesystem commands that are like linux and its pretty straight forward.
+  b) lets copy a log file that we are going to analyze . There are bunch of filesystem commands that are like linux and its pretty straight forward.
 {{{
 hadoop fs -copyFromLocal SystemOut.log hdfs://localhost/input/ 
 }}}
