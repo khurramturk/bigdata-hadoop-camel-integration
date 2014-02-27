@@ -20,6 +20,8 @@ ssh-host-config
   * When asked if privilege separation should be used, answer * no.
   *   * When asked if sshd should be installed as a service, answer  *  yes.
   *   * When asked about the value of CYGWIN environment variable enter * ntsec
+  *   * When asked about to use a new user name * no
+  *   * When asked about to create a new priviliged account * yes
 
 ==Start SSH daemon==
   * Find my computer icon either on your desktop or in the start-up menu, right-click on it and select Manage from the context menu.
