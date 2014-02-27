@@ -3,12 +3,13 @@
 
 = Introduction =
 
-Add your content here.
+Install and run Hadoop in Windows & Write and run your first Hadoop program.
 
 
-= Details =
+= Hadoop Installation on Windows 7=
 
-Add your content here.  Format your content with:
+This wiki gives a step by step tutorial about installing Hadoop in Windows-run a pseudo-distribution mode-start and monitor daemons-run your first program!:
+
   * *STEP 1)* Install cygwin from [https://code.google.com/p/bigdata-hadoop-camel-integration/wiki/CygwinWindows7Installation here]
   * *STEP 2)* Install SSH Server from [https://code.google.com/p/bigdata-hadoop-camel-integration/wiki/OpenSSHServerWindowsInstallation here] .
   * *STEP 3)* create the folder
@@ -21,7 +22,7 @@ copy data from c\program files\java\jre<version> to C:\jdk1.6.0_38
 }}}
 
 
-  * STEP 4)  *Getting the hadoop ready.*
+  * *STEP 4)* Getting the hadoop ready.
   * You can get the hadoop version 0.23.4 (Configured perfectly)
    [https://drive.google.com/file/d/0Bx33cC3yHVItbkVnOXFBamdrM1k/edit?usp=sharing Hadoop-Configured-Version]
 
@@ -55,15 +56,15 @@ sbin/start-yarn.sh
 }}}
 
 
-  * STEP 5)  open command prompt (or you can directly open the Cygwin)
+  * *STEP 5)* open command prompt (or you can directly open the Cygwin)
 {{{
 net stop sshd
 net start sshd
 ssh localhost
 }}}
-  * STEP 6)  Now try jps command it should list all java processes. 
+  * *STEP 6)* Now try jps command it should list all java processes. 
 
-  * Step 7) Urls: These deamons and managers gives you a nice web view and here are the links!
+  * *STEP 7)* Urls: These deamons and managers gives you a nice web view and here are the links!
 {{{
 http://localhost:50070/dfshealth.jsp (for NameNode)
 
@@ -74,7 +75,7 @@ http://localhost:8088/cluster (for ResourceManager)
 http://localhost:19888/jobhistory (for Job History Server)
 }}}
 
-  * Step 8) Now lets start with simple hadoop file system commands and then later run a sample program!
+  * *STEP 8)* Now lets start with simple hadoop file system commands and then later run a sample program!
   a) Lets first create two directories
 {{{
 hadoop fs -mkdir hdfs://localhost/input 
