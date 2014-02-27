@@ -36,7 +36,7 @@ Copy the hadoop/hadoop-0.23.4 ->  c/cygwin64/usr/local/
 }}}
 
 After that perform the following steps
-  # Make the above symbolic link as well. (just go to the directory one above hadoop-0.23.4 and enter the above command)
+  # Make the below symbolic link as well. (just go to the directory one above hadoop-0.23.4 and enter the below command)
 {{{
 ln -s hadoop-0.23.4 hadoop
 }}}
@@ -45,6 +45,9 @@ ln -s hadoop-0.23.4 hadoop
 hadoop version
 }}}
   # Run following command , so that it will do HDFS formatting and get the HDFS ready 
+{{{
+hadoop namenode -format
+}}}
   # Now lets start the managers and nodes! then `cd usr/local/hadoop`
 {{{
 sbin/hadoop-daemon.sh start namenode
@@ -64,7 +67,7 @@ ssh localhost
 }}}
   * *STEP 6)* Now try jps command it should list all java processes. 
 
-  * *STEP 7)* Urls: These deamons and managers gives you a nice web view and here are the links!
+  * *STEP 7)* Urls: These demons and managers gives you a nice web view and here are the links!
 {{{
 http://localhost:50070/dfshealth.jsp (for NameNode)
 
