@@ -177,5 +177,34 @@
         <resource-env-ref>
             <resource-env-ref-name>nPath</resource-env-ref-name>
             <resource-env-ref-type>java.lang.String</resource-env-ref-type>
-        </resource-env-ref>      
+        </resource-env-ref>    
+        
+        
+         <!-- Rest Full web services maping -->  
+        
+        <servlet> 
+
+<servlet-name>Jersey REST Service</servlet-name>
+
+	<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+
+	<init-param>
+
+		<param-name>com.sun.jersey.config.property.packages</param-name>
+
+		<param-value>com.ews.enterprise.ws</param-value>
+
+	</init-param>
+
+	<load-on-startup>1</load-on-startup> 
+
+</servlet> 
+
+<servlet-mapping> 
+
+<servlet-name>Jersey REST Service</servlet-name> 
+
+<url-pattern>/rest/*</url-pattern> 
+
+</servlet-mapping>   
 </web-app>
