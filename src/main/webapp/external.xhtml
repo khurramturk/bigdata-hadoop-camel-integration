@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title><ui:insert name="pageTitle">::: Test :::</ui:insert>
+	</title>
+	<!-- TODO: Will be moved to a stylesheet in future -->
+	<style>
+.ui-widget {
+	font-size: 12px !important;
+}
+.ui-carousel-header {
+    visibility:hidden;
+    display: none;
+}
+.portletPanel {
+	border: 2px thin;
+	border-color: #B5BECF;
+	/* margin-left: 10px; */
+	/* 	margin-top: 10px; */
+	height: 188px;
+	text-align: left;
+}
+.borderLessGrid {
+	border-width: 0 !important;
+	background-color: none !important;
+}
+
+.borderLessGrid tr,.borderLessGrid td {
+	border: 0 !important;
+	/*  		background-color: none !important; */
+	background-image: url("../images/bg_02.jpg");
+	background-repeat: repeat-x;
+}
+
+.borderLessGrid_noImage {
+	border-width: 0 !important;
+	background-color: none !important;
+}
+
+.borderLessGrid_noImage tr,.borderLessGrid_noImage td {
+	border: 0 !important;
+	background-color: none !important;
+}
+
+.staticLable {
+	text-align: left;
+	font-family: Trebuchet MS;
+	font-size: 12px;
+}
+
+.smallField {
+	width: 80px
+}
+
+.mediumField {
+	width: 150px
+}
+
+.largeField {
+	width: 98%;
+}
+
+.smallSelectOne {
+	width: 80px
+}
+
+.mediumSelectOne {
+	width: 150px
+}
+
+.largeSelectOne {
+	
+}
+
+.dynamicLabel {
+	
+}
+
+.panelGrid {
+	width: 100%;
+}
+
+.comboBox {
+	width: 100%;
+}
+
+.textLabel {
+	font-weight: bold;
+	font-stretch: extra-expanded;
+}
+
+.column70percent {
+	width: 70%;
+	vertical-align: top;
+}
+
+.column30percent {
+	width: 30%;
+	vertical-align: top;
+}
+
+.column80percent {
+	width: 80%;
+	vertical-align: top;
+}
+
+.column20percent {
+	width: 20%;
+	vertical-align: top;
+}
+
+.column75percent {
+	width: 75%;
+	vertical-align: top;
+}
+
+.column25percent {
+	width: 25%;
+	vertical-align: top;
+}
+
+.cp_button {
+	height: 25px;
+	width: 100px;
+}
+
+.cp_column1 {
+	width: 10%;
+	vertical-align: middle;
+}
+
+.cp_column2 {
+	width: 52%;
+	vertical-align: middle;
+}
+
+.cp_column3 {
+	width: 20%;
+	vertical-align: middle;
+	text-align: right;
+}
+
+.cp_column4 {
+	width: 20%;
+	vertical-align: middle;
+}
+
+.cp_field_large {
+	width: 500px;
+}
+
+.cp_periods_column1 {
+	width: 10%;
+}
+
+.cp_periods_column2 {
+	width: 15%;
+	text-align: right;
+}
+
+.cp_periods_column3 {
+	width: 30%;
+	text-align: right;
+}
+
+.cp_periods_column4 {
+	width: 15%;
+	text-align: right;
+}
+
+.cp_periods_column5 {
+	width: 30%;
+	text-align: right;
+}
+
+.cp_column70percent {
+	width: 70%;
+	padding-right: 10px;
+}
+
+.cp_header_panel .ui-panel-content {
+	border: 0;
+	background: none;
+	padding: 0;
+}
+
+
+
+html,body {
+	height: 94%;
+	width: 1000px;
+	margin: 2px auto;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
+}
+
+.footer,.push {
+	
+        margin-top: 10px;
+        
+}
+</style>
+</h:head>
+
+
+<h:body>
+	<p:growl id="mainErrorMessages1"></p:growl>
+
+
+	<p:separator></p:separator>
+	<p:spacer height="5"></p:spacer>
+
+	<div class="wrapper">
+		<ui:insert name="contents"></ui:insert>
+		<div class="push"></div>
+	</div>
+
+</h:body>
+
+</html>
