@@ -1,6 +1,10 @@
 package com.ews.enterprise.integration;
 
+import com.ews.enterprise.fileprocessing.FileTemplate;
+
 public class FileProcessingContext {
+	private FileTemplate importTemplate;
+    private FileTemplate exportTemplate;
 	private String fileName;
 	private String externalFileID;
 
@@ -19,4 +23,12 @@ public class FileProcessingContext {
 	public final void setExternalFileID(final String externalFileID) {
 		this.externalFileID = externalFileID;
 	}
+	
+	public final FileTemplate getImportTemplate() {
+        return importTemplate;
+    }
+
+    public final void setImportTemplate(final FileTemplate importTemplate) {
+        this.importTemplate = importTemplate;
+    }
 }
