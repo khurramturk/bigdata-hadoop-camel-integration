@@ -33,6 +33,8 @@ public class Startup {
                 camelMain = addTracingToMain(camelMain);
             }
             
+            //AppRouteBuilder arb = injector.getInstance(AppRouteBuilder.class);
+            //camelMain.addRouteBuilder(arb);
             camelMain.run();
         } catch (Exception e) {
             System.out.println("The DB configuration file is missing.\n" + e.getMessage());

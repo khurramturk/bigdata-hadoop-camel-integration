@@ -1,29 +1,44 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui" template="/external.xhtml">
+<!DOCTYPE html>
+<f:view contentType="text/html" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
 
+    <f:verbatim>
+        <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+        <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+        <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+        <!--[if gt IE 8]><!-->
+    </f:verbatim>
+    <html class="no-js">
+<f:verbatim>
+    <!--<![endif]-->
+</f:verbatim>
 
-	<title>Login</title>
+<h:head>
+    <meta charset="utf-8" />
+    <title><h:outputText
+            value="#{msgFileupload['browserTitle']}" /></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+</h:head>
 
-	<ui:define name="contents">
+	
+
+<h:body id="pgFileSubmission">
 		<h:form id="loginForm">
 
-			<p:panel>
-
-				<p:fileUpload
-					fileUploadListener="#{fileUploadController.handleFileUpload}"
-					mode="advanced" dragDropSupport="false" update="messages"
-					sizeLimit="100000" fileLimit="3"
-					allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
-
-				<p:growl id="messages" showDetail="true" />
-
-
-			</p:panel>
+			<h:panelGrid id="pgFileUpload">
+                                        <p:fileUpload id="fileUploadId"
+                                            fileUploadListener="#{fileUploadController.handleFileUpload}"
+                                            sizeLimit="10000000" allowTypes="/(\.|\/)(gif|jpe?g|png|txt|csv|xls|xlsx|xml)$/" />
+                                    </h:panelGrid>
 
 		</h:form>
-	</ui:define>
+	
 
-</ui:composition>
+</h:body>
+    </html>
+</f:view>
