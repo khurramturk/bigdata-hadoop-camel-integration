@@ -67,7 +67,7 @@ public class Importer {
 
     @Inject
     public Importer(final Properties props) {
-        this.maxBufferSize = Integer.parseInt(props.getProperty("org.airedale.fileChunkSize"));
+        this.maxBufferSize = Integer.parseInt(props.getProperty("org.integration.fileChunkSize"));
     }
 
     public final ChunkAndResponseWrapper importFile(final FileSubmission fileSubmission) throws IOException,

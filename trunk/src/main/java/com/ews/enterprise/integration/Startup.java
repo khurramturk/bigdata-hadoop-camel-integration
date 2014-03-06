@@ -1,6 +1,8 @@
 package com.ews.enterprise.integration;
 
 import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import org.apache.activemq.camel.component.ActiveMQComponent;
@@ -9,6 +11,8 @@ import org.apache.camel.LoggingLevel;
 import org.apache.camel.main.Main;
 import org.apache.camel.processor.interceptor.Tracer;
 
+import com.ews.web.guice.GuiceModule;
+import com.ews.web.guice.GuiceModule.ClassPair;
 import com.ews.web.guice.module.MongoModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -21,9 +25,9 @@ public class Startup {
             props.load(new FileInputStream("environment.properties"));
             props.load(new FileInputStream("application.properties"));
             String camelDcOnString = props.getProperty("org.integration.dc.camel");
-            
-            
-            Injector injector = Guice.createInjector(new MongoModule( props));
+            List<ClassPair> pairs = new ArrayList<ClassPair>(2);
+            GuiceModule guiceModule = new GuiceModule(pairs, props);
+            Injector injector = Guice.createInjector(guiceModule, new MongoModule( props));
             Main camelMain = new Main();
             camelMain.enableHangupSupport();
             camelMain
@@ -33,8 +37,8 @@ public class Startup {
                 camelMain = addTracingToMain(camelMain);
             }
             
-            //AppRouteBuilder arb = injector.getInstance(AppRouteBuilder.class);
-            //camelMain.addRouteBuilder(arb);
+            AppRouteBuilder arb = injector.getInstance(AppRouteBuilder.class);
+            camelMain.addRouteBuilder(arb);
             camelMain.run();
         } catch (Exception e) {
             System.out.println("The DB configuration file is missing.\n" + e.getMessage());
