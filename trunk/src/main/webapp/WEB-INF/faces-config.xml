@@ -20,8 +20,8 @@
 			<default-locale>en</default-locale>
 		</locale-config>
 		<resource-bundle>
-			<base-name>schedules</base-name>
-			<var>msgSchedules</var>
+			<base-name>fileupload</base-name>
+			<var>msgFileupload</var>
 		</resource-bundle>
 	</application>
 	<lifecycle>
