@@ -27,7 +27,6 @@ public class AppRouteBuilder extends RouteBuilder {
 
 	@Override
 	public void configure() throws Exception {
-		fileReadRoute();
 		fileSaveRout();
 		importFileRoute();
 		from("seda:storage")
@@ -35,26 +34,14 @@ public class AppRouteBuilder extends RouteBuilder {
         .bean(this.storageHandler, "saveRecordsInCanonicalModel");
 	}
 
-	/**
-	 * This method routes the file read through web, extracts the filename on
-	 * camelHeader and pushes for Archive Input is FileSubmission Output is
-	 * FileSubmission to Archive
-	 */
-	private void fileReadRoute() {
-		from("activemq:infile").tracing().process(new Processor() {
-			@Override
-			public void process(final Exchange exchange) throws Exception {
-				String fileId = exchange.getIn().getBody(FileSubmission.class).getContext().getExternalFileID();
-				exchange.getIn().setHeader("CamelFileName", exchange.getIn().getBody(FileSubmission.class).getContext().getFileName());				
-				exchange.getIn().setHeader("CamelExternalFileID", fileId);
-			}
-		}).to("seda:archive");
-	}
-
 	private void fileSaveRout() {
-		from("seda:archive").tracing()
+		from("activemq:httpinfile").tracing()
 				.bean(this.storageHandler, "saveOriginalFile")
 				.to("seda:import");
+		
+		from("activemq:ftpinfile").tracing()
+		.bean(this.storageHandler, "saveOriginalFile")
+		.to("seda:import");
 	}
 	
 	private void importFileRoute() {

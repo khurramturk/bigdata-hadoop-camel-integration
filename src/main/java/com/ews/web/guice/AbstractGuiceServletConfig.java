@@ -29,14 +29,14 @@ public abstract class AbstractGuiceServletConfig extends GuiceServletContextList
             camelContext.addRoutes(new RouteBuilder() {
                 @Override
                 public void configure() throws Exception {
-                    from("direct:start").inOnly("activemq:infile");
+                    from("direct:httpstart").inOnly("activemq:httpinfile");
                 }
             });
             
             camelContext.addRoutes(new RouteBuilder() {
                 @Override
                 public void configure() throws Exception {
-                    from("direct:rest").inOnly("activemq:rest");
+                    from("direct:ftpstart").inOnly("activemq:ftpinfile");
                 }
             });
             camelContext.start();
