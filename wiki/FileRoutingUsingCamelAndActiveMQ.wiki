@@ -1,4 +1,4 @@
-#File routing and processing using Apache Camel and ActiveMQ.
+File routing and processing using Apache Camel and ActiveMQ.
 
 = File Processing =
 
