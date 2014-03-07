@@ -24,7 +24,7 @@ public class FileReaderModule extends AbstractModule {
     final FileReaderService provideFileUpload() {
         try {
             return new ProxyBuilder(camelContext)
-                .endpoint("direct:start")
+                .endpoint("direct:httpstart")
                 .build(FileReaderService.class);
         } catch (Exception e) {
             throw new RuntimeException(e);
