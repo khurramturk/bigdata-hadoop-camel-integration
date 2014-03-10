@@ -11,6 +11,10 @@ Install and run Hadoop in Windows & Write and run your first Hadoop program.
 This wiki gives a step by step tutorial about installing Hadoop in Windows-run a pseudo-distribution mode-start and monitor daemons-run your first program!:
 
   * *STEP 1)* Install cygwin from [https://code.google.com/p/bigdata-hadoop-camel-integration/wiki/CygwinWindows7Installation here]
+  Add it installation path of of Cygwin in windows environment variable PATH e.g.
+{{{
+C:\cygwin64\bin
+}}}
   * *STEP 2)* Install SSH Server from [https://code.google.com/p/bigdata-hadoop-camel-integration/wiki/OpenSSHServerWindowsInstallation here] .
   * *STEP 3)* create the folder
 {{{
