@@ -28,7 +28,7 @@ copy data from c\program files\java\jre<version> to C:\jdk1.6.0_38
 
 
   * *STEP 4)* Getting the hadoop ready.
-    You can get the hadoop version 0.23.4 (Configured perfectly)from following link
+    You can get the Configured hadoop version 0.23.4 (Configured perfectly) from following link
    [https://drive.google.com/file/d/0Bx33cC3yHVItbkVnOXFBamdrM1k/edit?usp=sharing Hadoop-Configured-Version]
 
   Extract the *Hadoop.zip*  from above link
